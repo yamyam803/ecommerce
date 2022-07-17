@@ -1,19 +1,11 @@
 import React from "react";
-import Carousel from "./components/Carousel";
-import CompanyLogo from "./components/CompanyLogo";
-import Feature from "./components/Feature";
-import Links from "./components/Links";
-import Navbar from "./components/Navbar";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Links />
-      <Carousel />
-      <Feature />
-      <CompanyLogo />
-    </div>
+    <React.Fragment>
+      <Dashboard />
+    </React.Fragment>
   );
 };
 

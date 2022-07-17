@@ -1,0 +1,36 @@
+.container {
+  padding: 0 15rem;
+  display: flex;
+  gap: 2.4rem;
+}
+.feature-heading {
+  padding: 3.2rem 15rem 4rem 15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.feature-title {
+  font-weight: 600;
+  font-size: 2.8rem;
+  text-transform: capitalize;
+  color: #272343;
+}
+.feature-button {
+  display: flex;
+  gap: 1.6rem;
+}
+.left,
+.right {
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  border: none;
+}
+.left img {
+}
+.left {
+  background-color: transparent;
+}
+.right {
+  background-color: transparent;
+}
