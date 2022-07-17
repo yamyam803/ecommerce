@@ -1,0 +1,12 @@
+.company {
+  max-width: 104rem;
+  height: 13.9rem;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 5.2rem;
+  justify-content: space-between;
+}
+.company img {
+  width: 8.5rem;
+  height: 8.7rem;
+}

@@ -1,0 +1,101 @@
+.hero {
+  max-width: 174rem;
+  height: 85rem;
+  background-color: aqua;
+  background: #f0f2f3;
+  border-radius: 0px 0px 48px 48px;
+  margin: 0 9rem;
+  display: grid;
+  grid-template-columns: 63.1rem 1fr;
+  align-items: center;
+  padding: 0 9.8rem;
+  position: relative;
+}
+.hero-button {
+  padding: 1.4rem 2.4rem;
+  background: #029fae;
+  border-radius: 8px;
+  width: 171px;
+  border: none;
+  height: 52px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: inherit;
+  margin-top: 1.6rem;
+  /* line-height: 110%; */
+}
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 68px;
+  /* line-height: 110%; */
+  /* or 75px */
+
+  text-transform: capitalize;
+
+  /* Gray Scales/Black */
+
+  color: #272343;
+}
+.hero-title {
+  height: 32.3rem;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.hero-info {
+  font-weight: 400;
+  font-size: 1.4rem;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #272343;
+}
+.hero-image {
+  position: absolute;
+  top: 15rem;
+  right: 20rem;
+}
+.hero-image::before {
+  /* content: "";
+  width: 25rem;
+  height: 25rem;
+  background-color: #029fae;
+  display: inline-block;
+  filter: blur(2rem);
+  margin-left: 20rem;
+  border-radius: 40%; */
+}
+.hero-image img {
+}
+.left-button,
+.right-button {
+  width: 52px;
+  border: none;
+  border-radius: 50%;
+  height: 52px;
+}
+.left-button {
+  position: absolute;
+  left: 2rem;
+}
+.right-button {
+  position: absolute;
+  right: 2rem;
+}
+.elipse {
+  display: flex;
+  gap: 1.2rem;
+  position: absolute;
+  bottom: 15rem;
+  left: 50%;
+}
+.elipse img:hover {
+  /* width: 60px;
+  height: 12px; */
+  cursor: pointer;
+}
+.elipse img:nth-child(2) {
+  background-color: #029fae;
+  border-radius: 50%;
+}

@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  height: 7.5rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 15rem;
+  max-width: 192rem;
+}
+.links {
+  display: flex;
+  gap: 3.2rem;
+}
+.links-item {
+  list-style: none;
+  height: 4.7rem;
+  display: flex;
+  align-items: center;
+}
+.links-item a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #636270;
+}
+.links-item:nth-child(2) a {
+  color: #007580;
+}
+.links-item:first-child a {
+  display: inline-block;
+  padding: 1.6rem 2.4rem;
+  border: 1px solid #e1e3e6;
+  border-radius: 6px;
+  width: 176px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.links-item a:hover {
+  color: #007580;
+}
+.links-contact {
+  font-size: 1.4rem;
+}
+.links-menu {
+  margin-right: 1.2rem;
+}
