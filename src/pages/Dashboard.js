@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "../components/Carousel";
+import Categories from "../components/Categories";
 import CompanyLogo from "../components/CompanyLogo";
 import Feature from "../components/Feature";
 import FeatureProducts from "../components/FeatureProducts";
@@ -13,6 +14,7 @@ const Dashboard = () => {
       <Feature />
       <CompanyLogo />
       <FeatureProducts />
+      <Categories />
     </React.Fragment>
   );
 };

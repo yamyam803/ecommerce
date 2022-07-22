@@ -1,0 +1,58 @@
+.categories {
+  max-width: 192rem;
+  padding: 0 15rem;
+  height: 46.1rem;
+  margin-top: 8rem;
+}
+.head-categories {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.2rem;
+}
+.heading-categories {
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+.categories-button {
+  display: flex;
+  gap: 1.8rem;
+}
+.left-button,
+.right-button {
+  border: none;
+  height: 4.4rem;
+  width: 4.4rem;
+  border-radius: 50%;
+}
+.left-button {
+  background: #007580;
+}
+.right-button {
+  background: #f0f2f3;
+}
+.categories-products {
+  display: flex;
+  gap: 1.2rem;
+}
+.categories-items {
+  width: 41.4rem;
+  height: 41.4rem;
+}
+.categories-info {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 0px 0px 10px 10px;
+  padding: 2rem;
+  margin-top: -1rem;
+}
+.categories-text {
+  font-size: 20px;
+  color: #ffffff;
+}
+.categories-detail {
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.categories-img img {
+  width: 100%;
+}
