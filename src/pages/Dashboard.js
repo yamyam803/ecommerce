@@ -9,11 +9,12 @@ import Header from "../components/Header";
 import OurProducts from "../components/OurProducts";
 import RecentlyAdd from "../components/RecentlyAdd";
 import Testimonial from "../components/Testimonial";
+import SignIn from "./SignIn";
 
 const Dashboard = () => {
   return (
     <React.Fragment>
-      <Header />
+      {/* <Header />
       <Carousel />
       <Feature />
       <CompanyLogo />
@@ -22,7 +23,8 @@ const Dashboard = () => {
       <OurProducts />
       <Testimonial />
       <RecentlyAdd />
-      <Footer />
+      <Footer /> */}
+      <SignIn />
     </React.Fragment>
   );
 };
