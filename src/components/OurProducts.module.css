@@ -1,0 +1,34 @@
+.ourproducts-title {
+  text-align: center;
+  color: #272343;
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+.ourproducts-nav {
+  margin-top: 2.4rem;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 4rem;
+}
+.ourproducts-nav a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 0.8rem;
+  color: #9a9caa;
+  text-transform: uppercase;
+}
+.ourproducts-nav a:nth-child(3),
+.ourproducts-nav a:nth-child(1) {
+  color: #272343;
+}
+.ourproducts-nav a:nth-child(1) {
+  border-bottom: 2px solid green;
+}
+.container {
+  padding: 0 15rem;
+  display: flex;
+
+  gap: 2.4rem;
+}
