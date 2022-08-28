@@ -3,7 +3,6 @@ import Products from "./Products";
 import styles from "./FeatureProducts.module.css";
 import RightArrow from "../assets/Right Arrow.png";
 import LeftArrow from "../assets/Left Arrow.png";
-// import { products } from "../services/product";
 import { connect } from "react-redux";
 import { fetchProduct } from "../actions/products";
 const data = [];
@@ -30,14 +29,16 @@ const data = [];
 const FeatureProducts = (props) => {
   useEffect(() => {
     props.fetchProduct();
+    for (let i = 0; i <= 5; i++) {
+      console.log(props.products[i]);
+      data.push({
+        name: props.products[i].title,
+        price: props.products[i].price,
+      });
+    }
   }, []);
-  console.log(props.products);
-  for (let i = 0; i <= 5; i++) {
-    data.push({
-      name: props.products[i].title,
-      price: props.products[i].price,
-    });
-  }
+
+  
   // const data2 = async () => {
   //   const resp = await products;
   //   const data = await resp.json();
@@ -75,9 +76,8 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 const mapStateToProps = (state) => {
-  // return { number: state.number };
-  // console.log(state.products);
-  return { products: state.products };
+  const {products} = state;
+  return products;
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeatureProducts);

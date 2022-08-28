@@ -3,7 +3,10 @@ const baseURL = "https://fakestoreapi.com";
 export const products = () => {
   return fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
-    .then((json) => json)
+    .then((json) => {
+      // console.log(json)
+      return json;
+    })
     .catch((e) => e);
 };
 
