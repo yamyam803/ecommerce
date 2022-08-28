@@ -7,7 +7,7 @@ const Products = (props) => {
       <div className={styles["products-item"]}></div>
       <div className={styles["products-container"]}>
         <div className={styles["products-info"]}>
-          <p className={styles["products-detail"]}>{props.item.nama}</p>
+          <p className={styles["products-detail"]}>{props.item.name}</p>
           <span className={styles["products-price"]}>${props.item.price}</span>
         </div>
         <button className={styles["products-button"]}>

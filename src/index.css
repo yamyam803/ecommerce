@@ -9,3 +9,10 @@ html {
 body {
   font-family: "Rubik", sans-serif;
 }
+.text-alert {
+  font-size: 1.6rem;
+  margin-top: 1.2rem;
+  color: rgb(221, 33, 33);
+  margin-right: auto;
+  text-transform: capitalize;
+}

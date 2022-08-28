@@ -1,20 +1,19 @@
 import React from "react";
-import Carousel from "../components/Carousel";
-import Categories from "../components/Categories";
-import CompanyLogo from "../components/CompanyLogo";
-import Feature from "../components/Feature";
-import FeatureProducts from "../components/FeatureProducts";
-import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Carousel from "../components/Carousel";
+import Feature from "../components/Feature";
+import CompanyLogo from "../components/CompanyLogo";
+import FeatureProducts from "../components/FeatureProducts";
+import Categories from "../components/Categories";
 import OurProducts from "../components/OurProducts";
-import RecentlyAdd from "../components/RecentlyAdd";
 import Testimonial from "../components/Testimonial";
-import SignIn from "./SignIn";
+import RecentlyAdd from "../components/RecentlyAdd";
+import Footer from "../components/Footer";
 
-const Dashboard = () => {
+const Home = () => {
   return (
-    <React.Fragment>
-      {/* <Header />
+    <div>
+      <Header />
       <Carousel />
       <Feature />
       <CompanyLogo />
@@ -23,10 +22,9 @@ const Dashboard = () => {
       <OurProducts />
       <Testimonial />
       <RecentlyAdd />
-      <Footer /> */}
-      <SignIn />
-    </React.Fragment>
+      <Footer />
+    </div>
   );
 };
 
-export default Dashboard;
+export default Home;
