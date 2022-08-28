@@ -28,25 +28,22 @@ const data = [];
 
 const FeatureProducts = (props) => {
   useEffect(() => {
-    props.fetchProduct();
-    for (let i = 0; i <= 5; i++) {
-      console.log(props.products[i]);
-      data.push({
-        name: props.products[i].title,
-        price: props.products[i].price,
-      });
-    }
+    (async () => {
+      try {
+        await props.fetchProduct();
+        for (let i = 0; i <= 5; i++) {
+          console.log(props.products.data[i]);
+          data.push({
+            name: props.products.data[i].title,
+            price: props.products.data[i].price,
+          });
+        }
+      } catch (e) {
+        // Some fetch error
+      }
+    })();
   }, []);
 
-  
-  // const data2 = async () => {
-  //   const resp = await products;
-  //   const data = await resp.json();
-  //   console.log(data);
-  // };
-  // useEffect(() => {
-  //   data2();
-  // }, []);
   return (
     <React.Fragment>
       <div className={styles["feature-heading"]}>
@@ -70,9 +67,7 @@ const FeatureProducts = (props) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    // dispatching plain actions
     fetchProduct: () => dispatch(fetchProduct()),
-    // decrement: () => dispatch(kurang()),
   };
 };
 const mapStateToProps = (state) => {
@@ -81,4 +76,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FeatureProducts);
-// export default FeatureProducts;
