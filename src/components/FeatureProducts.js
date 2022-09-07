@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Products from "./Products";
 import styles from "./FeatureProducts.module.css";
 import RightArrow from "../assets/Right Arrow.png";
 import LeftArrow from "../assets/Left Arrow.png";
-import { connect } from "react-redux";
+import { connect,useDispatch,useSelector } from "react-redux";
 import { fetchProduct } from "../actions/products";
 const data = [];
 
@@ -20,29 +20,44 @@ const data = [];
 // rating: Object { rate: 4.1, count: 259 }
 // ​​​​
 // count: 259
-// ​​​​
+// ​​
 // rate: 4.1
 // ​/* <prototype>: Object { … }
 // ​​​
 // title: "Mens Casual Premium Slim Fit T-Shirts " */
 
 const FeatureProducts = (props) => {
+  const dispatch = useDispatch();
+  const [dataProduct, setDataProduct] = useState([]);
+  const { products } = useSelector((state) => state.products);
+
+  const mappingProduct =() =>{
+    // const pItem = []
+    // for (let i = 0; i < 5; i++) {
+    //   pItem.push({
+    //     name: products.data[i].title,
+    //     price: products.data[i].price,
+    //   })
+    // }
+    // setDataProduct(pItem);
+  }
   useEffect(() => {
-    (async () => {
+    const fd = async () => {
       try {
-        await props.fetchProduct();
-        for (let i = 0; i <= 5; i++) {
-          console.log(props.products.data[i]);
-          data.push({
-            name: props.products.data[i].title,
-            price: props.products.data[i].price,
-          });
-        }
-      } catch (e) {
-        // Some fetch error
+        await dispatch(fetchProduct());
+      } catch (error) {
+        console.log("error", error);
       }
-    })();
-  }, []);
+    };
+
+    if(!products){ fd();}
+    },  [products]);
+
+  useEffect(() => {    
+    if(!dataProduct){
+      mappingProduct()
+    }            
+  }, [products, dataProduct]);
 
   return (
     <React.Fragment>
@@ -58,21 +73,24 @@ const FeatureProducts = (props) => {
         </div>
       </div>
       <div className={styles.container}>
-        {data.map((item) => {
-          return <Products item={item} key={Math.random().toString()} />;
+        {products && products.data.map((item) => {
+          const itemMap = {name: item.title, price: item.price}
+          return <Products item={itemMap} key={Math.random().toString()} />;
         })}
       </div>
     </React.Fragment>
   );
 };
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchProduct: () => dispatch(fetchProduct()),
-  };
-};
-const mapStateToProps = (state) => {
-  const {products} = state;
-  return products;
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     _fetchProduct: () => fetchProduct(dispatch),
+//   };
+// };
+// const mapStateToProps = (state) => {
+//   const {products} = state;
+//   console.log('state prod',state);
+//   return products;
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FeatureProducts);
+export default FeatureProducts;
+// export default connect(mapStateToProps, mapDispatchToProps)(FeatureProducts);

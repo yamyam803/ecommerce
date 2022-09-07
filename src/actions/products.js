@@ -1,23 +1,20 @@
 import { products } from "../services/product";
 import { FETCH_PRODUCTS_SUCCES, FETCH_PRODUCTS_FAIL } from "./types";
-export const fetchProduct = () => (dispatch) => {
+export const fetchProduct =() => (dispatch) => {
   return products().then(
     (data) => {
-      //   console.log(data);
-      dispatch({
+      console.log(data);
+      return dispatch({
         type: FETCH_PRODUCTS_SUCCES,
-        payload: { products: data },
+        payload: data,
       });
 
-      return Promise.resolve();
     },
     (error) => {
       console.log(error);
-      dispatch({
+      return dispatch({
         type: FETCH_PRODUCTS_FAIL,
       });
-
-      return Promise.reject();
     }
   );
 };
