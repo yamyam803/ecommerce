@@ -3,8 +3,8 @@ import Products from "./Products";
 import styles from "./FeatureProducts.module.css";
 import RightArrow from "../assets/Right Arrow.png";
 import LeftArrow from "../assets/Left Arrow.png";
-import { connect,useDispatch,useSelector } from "react-redux";
-import { fetchProduct } from "../actions/products";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { fetchProduct, AddProduct } from "../actions/products";
 const data = [];
 
 // category: "men's clothing"
@@ -31,7 +31,7 @@ const FeatureProducts = (props) => {
   const [dataProduct, setDataProduct] = useState([]);
   const { products } = useSelector((state) => state.products);
 
-  const mappingProduct =() =>{
+  const mappingProduct = () => {
     // const pItem = []
     // for (let i = 0; i < 5; i++) {
     //   pItem.push({
@@ -40,7 +40,7 @@ const FeatureProducts = (props) => {
     //   })
     // }
     // setDataProduct(pItem);
-  }
+  };
   useEffect(() => {
     const fd = async () => {
       try {
@@ -50,13 +50,15 @@ const FeatureProducts = (props) => {
       }
     };
 
-    if(!products){ fd();}
-    },  [products]);
+    if (!products) {
+      fd();
+    }
+  }, [products]);
 
-  useEffect(() => {    
-    if(!dataProduct){
-      mappingProduct()
-    }            
+  useEffect(() => {
+    if (!dataProduct) {
+      mappingProduct();
+    }
   }, [products, dataProduct]);
 
   return (
@@ -73,10 +75,16 @@ const FeatureProducts = (props) => {
         </div>
       </div>
       <div className={styles.container}>
-        {products && products.data.map((item) => {
-          const itemMap = {name: item.title, price: item.price}
-          return <Products item={itemMap} key={Math.random().toString()} />;
-        })}
+        {products &&
+          products.data.map((item) => {
+            console.log(item);
+            const itemMap = {
+              name: item.title,
+              price: item.price,
+              id: item.id,
+            };
+            return <Products item={itemMap} key={Math.random().toString()} />;
+          })}
       </div>
     </React.Fragment>
   );
