@@ -9,6 +9,7 @@ import OurProducts from "../components/OurProducts";
 import Testimonial from "../components/Testimonial";
 import RecentlyAdd from "../components/RecentlyAdd";
 import Footer from "../components/Footer";
+import Checkout from "../components/Checkout";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <Testimonial />
       <RecentlyAdd />
       <Footer />
+      {/* <Checkout /> */}
     </div>
   );
 };

@@ -77,7 +77,7 @@ const FeatureProducts = (props) => {
       <div className={styles.container}>
         {products &&
           products.data.map((item) => {
-            console.log(item);
+            // console.log(item);
             const itemMap = {
               name: item.title,
               price: item.price,

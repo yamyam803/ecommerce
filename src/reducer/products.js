@@ -4,13 +4,14 @@ const initialState = { products: null };
 
 export default function (state = initialState, action) {
   const { type, payload } = action;
-  console.log(action);
   switch (type) {
     case FETCH_PRODUCTS_SUCCES:
-      console.log({products: {
-        data: payload,
-        error: false,
-      }});
+      // console.log({
+      //   products: {
+      //     data: payload,
+      //     error: false,
+      //   },
+      // });
       return {
         ...state,
         products: {

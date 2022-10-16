@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import ComfortyLogo from "../assets/LogoChairy.png";
 import SearchLogo from "../assets/search-1.png";
+// import { Outlet } from "react-router-dom";
 import CartLogo from "../assets/Group.png";
 import ProfileLogo from "../assets/Profile.png";
 import HeartLogo from "../assets/Heart 1.png";
-const Navbar = () => {
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+const Navbar = (props) => {
   return (
     <nav className={styles.nav}>
       <img
@@ -27,15 +30,15 @@ const Navbar = () => {
       </form>
 
       <div className={styles["nav-button__logo"]}>
-        <button className={styles["nav-button__cart"]}>
+        <Link className={styles["nav-button__cart"]} to="/cart">
           <img
             src={CartLogo}
             alt="cart logo"
             className={styles["nav-cart__image"]}
           />
           <p className={styles["nav-cart__details"]}>Cart</p>
-          <p className={styles["nav-cart__count"]}>0</p>
-        </button>
+          <p className={styles["nav-cart__count"]}>{props.total}</p>
+        </Link>
         <button className={styles["nav-logo__heart"]}>
           <img
             src={HeartLogo}
@@ -51,8 +54,19 @@ const Navbar = () => {
           />
         </button>
       </div>
+      {/* <Outlet /> */}
     </nav>
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => {
+  let total = 0;
+  if (state.cart && state.cart.cart) {
+    state.cart.cart.forEach((item) => {
+      total += item.qty;
+    });
+  }
+  return { total };
+};
+
+export default connect(mapStateToProps)(Navbar);

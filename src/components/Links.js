@@ -28,7 +28,7 @@ const Links = () => {
         </li>
       </ul>
       <p className={styles["links-contact"]}>
-        Contact: <strong>(808) 555-0111</strong>{" "}
+        Contact: <strong>(808) 555-0111</strong>
       </p>
     </div>
   );

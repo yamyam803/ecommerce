@@ -7,10 +7,13 @@ import Daftar from "./pages/Daftar";
 import { useDispatch, useSelector } from "react-redux";
 // import { unstable_HistoryRouter as HistoryRouter } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import Cart from "./pages/Cart";
 
 const history = createBrowserHistory({ window });
 const App = () => {
   const { user: currentUser } = useSelector((state) => state.auth);
+  const cart = useSelector((state) => state);
+  console.log(cart);
   const dispatch = useDispatch();
   // const history = useHistory();
   useEffect(() => {
@@ -27,7 +30,7 @@ const App = () => {
         <Routes>
           {currentUser && <Route path="/" element={<Home />} />}
           {currentUser && <Route path="/product" element={<Produk />} />}
-
+          {currentUser && <Route path="/cart" element={<Cart />} />}
           {!currentUser && <Route path="/login" element={<SignIn />} />}
           <Route path="/signup" element={<Daftar />} />
         </Routes>
